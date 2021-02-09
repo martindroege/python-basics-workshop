@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Martin Dröge">
+  <title>Python Basics</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2//css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@3.9.2//css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://unpkg.com/reveal.js@3.9.2//css/print/pdf.css' : 'https://unpkg.com/reveal.js@3.9.2//css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="https://unpkg.com/reveal.js@3.9.2//lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Python Basics</h1>
+  <p class="author">Martin Dröge</p>
+  <p class="date">26. Februar 2021</p>
+</section>
+
+<section><section id="einstieg" class="title-slide slide level1"><h1>Einstieg</h1></section><section id="vorstellungsrunde-und-erwartungen" class="slide level2">
+<h2>Vorstellungsrunde und Erwartungen</h2>
+</section><section id="zeitplan" class="slide level2">
+<h2>Zeitplan</h2>
+<ul>
+<li>Teil 1 | 9-11 Uhr:
+<ul>
+<li>Python Basics</li>
+</ul></li>
+<li>Teil 2 | 11-13 Uhr:
+<ul>
+<li>Anwendungsbeispiele
+<ul>
+<li>Text Mining</li>
+<li>Web Scraping</li>
+</ul></li>
+</ul></li>
+</ul>
+<!-- ## Warum sollten Historiker*Innen programmieren? -->
+</section><section id="ziele" class="slide level2">
+<h2>Ziele</h2>
+<ul>
+<li>Einstiegsschwelle überwinden</li>
+<li>Neugierig machen</li>
+<li>Einblicke in Python geben</li>
+<li>Eigene Skripte schreiben</li>
+</ul>
+</section><section id="grenzen" class="slide level2">
+<h2>Grenzen</h2>
+<ul>
+<li>Sehr knapper Zeitplan</li>
+<li>Nur Grundlagen werden angesprochen</li>
+<li>Kein vollständiger Programmierkurs</li>
+</ul>
+</section><section id="fragen-sind-jederzeit-erwünscht" class="slide level2">
+<h2>Fragen sind jederzeit erwünscht!</h2>
+</section><section id="vorgehen" class="slide level2">
+<h2>Vorgehen</h2>
+<ul>
+<li>Kurze Inputs</li>
+<li>Kleine Skripte gemeinsam schreiben <!-- * Vorlage der Skripte im Ausdruck --></li>
+</ul>
+</section><section id="zwei-lern-stränge" class="slide level2">
+<h2>Zwei „Lern-Stränge“</h2>
+<ol type="1">
+<li><p>Python-Skripte coden</p></li>
+<li><p>Jupyter Notebooks, Deepnote und Google Colab kennenlernen</p></li>
+</ol>
+</section></section>
+<section><section id="block-1-historie-konzepte-einsatz" class="title-slide slide level1"><h1>Block 1: Historie, Konzepte, Einsatz</h1></section><section id="warum-python" class="slide level2">
+<h2>Warum Python?</h2>
+<ul>
+<li>einfach zu lernen</li>
+<li>einfach zu lesen</li>
+<li>riesige Community</li>
+<li>viele Bibliotheken verfügbar</li>
+<li>laut TIOBE im Jahr 2020 auf <a href="https://www.tiobe.com/tiobe-index/">Platz 3</a></li>
+<li>Open Source Software</li>
+</ul>
+</section><section id="entwicklung" class="slide level2">
+<h2>Entwicklung</h2>
+<ul>
+<li>zu Beginn der 1990er-Jahre von Guido van Rossum entwickelt</li>
+<li>1994 erschien die Version 1.0</li>
+<li>ursprünglicher Zweck: Programmieren vermitteln</li>
+<li>Name geht nicht auf die Schlange, sondern auf Monty Python zurück</li>
+<li>Dezember 2008: Version 3.0 -&gt; vollständig auf Unicode umgestellt</li>
+<li>aktuelle Version Python 3.9.1 <!-- * Juli 2018: Guido van Rossum tritt als "Benevolent Dictator for Life" (BDFL) --></li>
+</ul>
+</section><section id="python-als-skriptsprache" class="slide level2">
+<h2>Python als Skriptsprache</h2>
+<ul>
+<li>interpretiert</li>
+<li>höhere Programmiersprache</li>
+<li>Python-Skripte erkennbar an der Endung: <code>skript_name.py</code></li>
+<li>Jupyter Notebooks erkennbar an der Endung: <code>notebook_name.ipynb</code></li>
+</ul>
+</section><section id="einsatzgebiete-i" class="slide level2">
+<h2>Einsatzgebiete I</h2>
+<ul>
+<li>Universitäten und Forschungseinrichtungen</li>
+<li>Technologie-Branche</li>
+<li>Industrie</li>
+<li>Data Science</li>
+</ul>
+</section><section id="einsatzgebiete-ii" class="slide level2">
+<h2>Einsatzgebiete II</h2>
+<ul>
+<li>Data and Text Mining</li>
+<li>Daten-Analyse</li>
+<li>Visualisierung</li>
+<li>Web Entwicklung</li>
+<li>System-Administration</li>
+<li>Rapid Prototyping</li>
+</ul>
+</section><section id="hilfe-zur-selbsthilfe" class="slide level2">
+<h2>Hilfe zur Selbsthilfe</h2>
+<ul>
+<li><a href="https://docs.python.org/3/tutorial/">Python Tutorial</a></li>
+<li><a href="https://www.learnpython.org/">learnpython.org</a></li>
+<li><a href="https://www.python.org/doc/">Python Dokumentation</a></li>
+<li><a href="https://www.python.org/community/">Python Community</a></li>
+<li><a href="https://www.python-forum.de/">Python Forum</a></li>
+<li><a href="https://stackoverflow.com/">Stack Overflow</a></li>
+</ul>
+</section></section>
+<section><section id="block-2-erste-schritte" class="title-slide slide level1"><h1>Block 2: Erste Schritte</h1></section><section id="jupyter-notebook-unter-anaconda" class="slide level2">
+<h2>Jupyter Notebook unter Anaconda</h2>
+<ul>
+<li>Anaconda sollte vorab installiert sein!</li>
+<li><a href="https://www.anaconda.com" class="uri">https://www.anaconda.com</a></li>
+</ul>
+</section><section id="lokales-arbeitsverzeichnis-erstellen" class="slide level2">
+<h2>lokales Arbeitsverzeichnis erstellen</h2>
+<ul>
+<li>Neuen Ordner anlegen</li>
+<li>Umbenennen in <code>python-workshop</code></li>
+<li>Speicherort merken</li>
+</ul>
+</section><section id="jupyter-notebook-starten" class="slide level2">
+<h2>Jupyter Notebook starten</h2>
+<ul>
+<li>Windows-Startmenu aufrufen</li>
+<li>unter ‘A’: Anaconda auswählen</li>
+<li><code>Jupyter Notebook</code> anklicken</li>
+<li>Zum Ordner <code>python-workshop</code> navigieren</li>
+</ul>
+</section><section id="neues-jupyter-notebook" class="slide level2">
+<h2>Neues Jupyter Notebook</h2>
+<ul>
+<li>Rechts oben auf ‘New’ klicken und Python3 auswählen</li>
+<li>Links ‘File’ auswählen und ‘Rename’ anklicken</li>
+<li>Notebook umbenennen in <code>python-workshop-notebook</code></li>
+</ul>
+</section><section id="notebook-unter-google-colaboratory" class="slide level2">
+<h2>Notebook unter Google Colaboratory</h2>
+<ul>
+<li>mit Google Account angemeldet sein</li>
+<li>Vorteil:
+<ul>
+<li>kein Setup und keine Installationen notwendig</li>
+<li>Notebooks können über einen Link geteilt werden</li>
+<li>Blick aus der Ferne in das Notebook wird möglich</li>
+</ul></li>
+</ul>
+</section><section id="google-colab-starten" class="slide level2">
+<h2>Google Colab starten</h2>
+<ul>
+<li><a href="https://colab.research.google.com" class="uri">https://colab.research.google.com</a> aufrufen</li>
+<li>unten rechts <code>NEUES NOTEBOOK</code> auswählen</li>
+<li>Notebook umbenennen in <code>*NAME*_python-workshop-notebook</code></li>
+</ul>
+</section><section id="jupyter-notebook-im-browser" class="slide level2">
+<h2>Jupyter Notebook im Browser</h2>
+<ul>
+<li><a href="https://jupyter.org/try" class="uri">https://jupyter.org/try</a> aufrufen</li>
+<li>‘Try Classic Notebook’ anklicken</li>
+<li>Links ‘File’, dann ‘New Notebook’ und ‘Python3’ anwählen</li>
+<li>Links ‘File’ auswählen und ‘Rename’ anklicken</li>
+<li>Notebook umbenennen in <code>python-workshop-notebook</code></li>
+</ul>
+</section><section id="hallo-welt" class="slide level2">
+<h2>Hallo Welt!</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="bu">print</span>(<span class="st">&quot;Hallo Welt!&quot;</span>)</a></code></pre></div>
+</section><section id="jupyter-notebook-short-cuts" class="slide level2">
+<h2>Jupyter Notebook Short Cuts</h2>
+<ul>
+<li>STRG + Enter = Zelle ausführen</li>
+<li>SHIFT + Enter = Zelle ausführen und neue Zelle einfügen</li>
+<li>ESC = Wechsel in den Command Mode</li>
+<li>Enter = Wechsel in den Edit Mode</li>
+<li>B = neue Zelle unten einfügen</li>
+<li>M = Zelle in Markdown umwandeln</li>
+</ul>
+</section><section id="addieren" class="slide level2">
+<h2>Addieren</h2>
+<p>5 + 2</p>
+<p>3 + 6</p>
+<p>42 + 1337</p>
+</section><section id="substrahieren" class="slide level2">
+<h2>Substrahieren</h2>
+<p>5 - 2</p>
+<p>7 - 4</p>
+<p>1337 - 42</p>
+</section><section id="multiplizieren" class="slide level2">
+<h2>Multiplizieren</h2>
+<p>7 * 5</p>
+<p>6 * 3</p>
+<p>6 * 7</p>
+</section><section id="dividieren" class="slide level2">
+<h2>Dividieren</h2>
+<p>15 / 3</p>
+<p>42 / 7</p>
+<p>1337 / 12</p>
+</section><section id="ganzzahl-und-gleitkommazahl" class="slide level2">
+<h2>Ganzzahl und Gleitkommazahl</h2>
+<ul>
+<li><strong>Ganzzahl</strong></li>
+</ul>
+<p>Integer, int(): 8, 42, 1337</p>
+<ul>
+<li><strong>Gleitkommazahl</strong></li>
+</ul>
+<p>Float, float(): 1.5, 8.7, 123.45</p>
+</section></section>
+<section><section id="block-3-datentypen" class="title-slide slide level1"><h1>Block 3: Datentypen</h1></section><section id="zeichenketten-strings" class="slide level2">
+<h2>Zeichenketten / Strings</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="bu">print</span>(<span class="st">&quot;Hallo Welt!&quot;</span>)</a></code></pre></div>
+</section><section id="konkatenieren" class="slide level2">
+<h2>Konkatenieren</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="bu">print</span>(<span class="st">&quot;Hallo &quot;</span> <span class="op">+</span> <span class="st">&quot;Welt!&quot;</span>)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="bu">print</span>(<span class="st">&quot;Digital History Tagung &quot;</span> <span class="op">+</span> <span class="st">&quot;2021&quot;</span>)</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="bu">print</span>(<span class="st">&quot;foo&quot;</span> <span class="op">*</span> <span class="dv">2</span> <span class="op">+</span> <span class="st">&quot;bar &quot;</span> <span class="op">*</span> <span class="dv">3</span>)</a></code></pre></div>
+</section><section id="variablen" class="slide level2">
+<h2>Variablen</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb4-1" data-line-number="1">event <span class="op">=</span> <span class="st">&quot;Digital History Tagung&quot;</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">year <span class="op">=</span> <span class="dv">2021</span></a></code></pre></div>
+</section><section id="f-strings" class="slide level2">
+<h2>f-Strings</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="bu">print</span>(<span class="ss">f&quot;Die </span><span class="sc">{</span>event<span class="sc">}</span><span class="ss"> findet </span><span class="sc">{</span>year<span class="sc">}</span><span class="ss"> statt.&quot;</span>)</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"><span class="bu">print</span>(<span class="st">&quot;Die </span><span class="sc">{}</span><span class="st"> findet </span><span class="sc">{}</span><span class="st"> statt.&quot;</span>.<span class="bu">format</span>(event, year))</a></code></pre></div>
+</section><section id="funktionen-und-methoden-bei-strings" class="slide level2">
+<h2>Funktionen und Methoden bei Strings</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="bu">len</span>(event)</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="bu">len</span>(<span class="st">&quot;Digital History Tagung&quot;</span>)</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">event.lower()</a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">&quot;Digital History Tagung&quot;</span>.upper()</a></code></pre></div>
+</section><section id="listen-lists" class="slide level2">
+<h2>Listen / Lists</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1">list_1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">list_2 <span class="op">=</span> [<span class="st">&quot;Banane&quot;</span>, <span class="st">&quot;Apfel&quot;</span>, <span class="st">&quot;Birne&quot;</span>]</a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">list_3 <span class="op">=</span> [<span class="dv">17</span>, <span class="st">&quot;Obst&quot;</span>, <span class="dv">23</span>, <span class="st">&quot;Ball&quot;</span>]</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">list_4 <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>,], [<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>], [<span class="st">&quot;Hallo&quot;</span>, <span class="st">&quot;Welt&quot;</span>]]</a></code></pre></div>
+</section><section id="zuordnungen-dictionaries" class="slide level2">
+<h2>Zuordnungen / Dictionaries</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb8-1" data-line-number="1">dict_1 <span class="op">=</span> {<span class="st">&quot;Banane&quot;</span>: <span class="dv">5</span>, </a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">          <span class="st">&quot;Apfel&quot;</span>: <span class="dv">7</span>, </a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">          <span class="st">&quot;Birne&quot;</span>: <span class="dv">9</span>}</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5">dict_2 <span class="op">=</span> {<span class="st">&quot;Vorname&quot;</span>: <span class="st">&quot;Monty&quot;</span>, </a>
+<a class="sourceLine" id="cb8-6" data-line-number="6">          <span class="st">&quot;Nachname&quot;</span>: <span class="st">&quot;Python&quot;</span>, </a>
+<a class="sourceLine" id="cb8-7" data-line-number="7">          <span class="st">&quot;Alter&quot;</span>: <span class="dv">48</span>}</a></code></pre></div>
+</section><section id="mengen-sets" class="slide level2">
+<h2>Mengen / Sets</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb9-1" data-line-number="1">menge <span class="op">=</span> {<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">5</span>}</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="bu">print</span>(menge)</a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="bu">type</span>(menge)</a></code></pre></div>
+</section><section id="tuple" class="slide level2">
+<h2>Tuple</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb10-1" data-line-number="1">word_freq <span class="op">=</span> (<span class="st">&quot;Wort A&quot;</span>, <span class="dv">42</span>)</a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"><span class="bu">type</span>(word_freq)</a></code></pre></div>
+</section><section id="indexieren-von-strings" class="slide level2">
+<h2>Indexieren von Strings</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="co">&quot;Digital History Tagung&quot;</span>[<span class="dv">1</span>]</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb11-3" data-line-number="3"><span class="co">&quot;Digital History Tagung&quot;</span>[<span class="dv">0</span>]</a>
+<a class="sourceLine" id="cb11-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb11-5" data-line-number="5"><span class="co">&quot;Digital History Tagung&quot;</span>[<span class="dv">8</span>]</a></code></pre></div>
+</section><section id="slicing" class="slide level2">
+<h2>Slicing</h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="co">&quot;Digital History Tagung&quot;</span>[<span class="dv">0</span>:<span class="dv">10</span>]</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="co">&quot;Digital History Tagung&quot;</span>[<span class="dv">3</span>:<span class="dv">6</span>]</a></code></pre></div>
+</section><section id="indexieren-von-listen" class="slide level2">
+<h2>Indexieren von Listen</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb13-1" data-line-number="1">list_2 <span class="op">=</span> [<span class="st">&quot;Banane&quot;</span>, <span class="st">&quot;Apfel&quot;</span>, <span class="st">&quot;Birne&quot;</span>]</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">list_2[<span class="dv">2</span>]</a>
+<a class="sourceLine" id="cb13-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb13-5" data-line-number="5">list_2[<span class="dv">0</span>]</a></code></pre></div>
+</section><section id="funktionen-und-methoden-bei-listen" class="slide level2">
+<h2>Funktionen und Methoden bei Listen</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="bu">len</span>(list_2)</a>
+<a class="sourceLine" id="cb14-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb14-3" data-line-number="3">list_2.append(<span class="st">&quot;Ananas&quot;</span>)</a>
+<a class="sourceLine" id="cb14-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb14-5" data-line-number="5">list_2.pop()</a></code></pre></div>
+</section><section id="zugriff-auf-dictionaries" class="slide level2">
+<h2>Zugriff auf Dictionaries</h2>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb15-1" data-line-number="1">dict_1 <span class="op">=</span> {<span class="st">&quot;Banane&quot;</span>: <span class="dv">5</span>, <span class="st">&quot;Apfel&quot;</span>: <span class="dv">7</span>, <span class="st">&quot;Birne&quot;</span>: <span class="dv">9</span>}</a>
+<a class="sourceLine" id="cb15-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb15-3" data-line-number="3">dict_1[<span class="st">&quot;Banane&quot;</span>]</a>
+<a class="sourceLine" id="cb15-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb15-5" data-line-number="5">dict_1.keys()</a>
+<a class="sourceLine" id="cb15-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb15-7" data-line-number="7">dict_1.values()</a>
+<a class="sourceLine" id="cb15-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb15-9" data-line-number="9"><span class="bu">sum</span>(dict_1.values())</a></code></pre></div>
+</section><section id="logische-ausdrücke" class="slide level2">
+<h2>Logische Ausdrücke</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb16-1" data-line-number="1"><span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">3</span></a>
+<a class="sourceLine" id="cb16-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb16-3" data-line-number="3"><span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">7</span></a>
+<a class="sourceLine" id="cb16-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb16-5" data-line-number="5"><span class="co">&quot;Mauer&quot;</span> <span class="op">==</span> <span class="st">&quot;Haus&quot;</span></a>
+<a class="sourceLine" id="cb16-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb16-7" data-line-number="7"><span class="co">&quot;Mauer&quot;</span> <span class="op">!=</span> <span class="st">&quot;Haus&quot;</span></a></code></pre></div>
+</section><section id="logische-ausdrücke-and-or" class="slide level2">
+<h2>Logische Ausdrücke: and, or</h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb17-1" data-line-number="1"><span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">3</span> <span class="kw">and</span> <span class="st">&quot;Mauer&quot;</span> <span class="op">!=</span> <span class="st">&quot;Haus&quot;</span></a>
+<a class="sourceLine" id="cb17-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb17-3" data-line-number="3"><span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">3</span> <span class="kw">and</span> <span class="st">&quot;Mauer&quot;</span> <span class="op">==</span> <span class="st">&quot;Haus&quot;</span></a>
+<a class="sourceLine" id="cb17-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb17-5" data-line-number="5"><span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">3</span> <span class="kw">or</span> <span class="st">&quot;Mauer&quot;</span> <span class="op">==</span> <span class="st">&quot;Haus&quot;</span></a>
+<a class="sourceLine" id="cb17-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb17-7" data-line-number="7"><span class="dv">5</span> <span class="op">&gt;</span> <span class="dv">7</span> <span class="kw">or</span> <span class="st">&quot;Mauer&quot;</span> <span class="op">==</span> <span class="st">&quot;Haus&quot;</span></a></code></pre></div>
+</section></section>
+<section><section id="block-4-error-handling-und-kontrollstrukturen" class="title-slide slide level1"><h1>Block 4: error handling und Kontrollstrukturen</h1></section><section id="user-input-skript" class="slide level2">
+<h2>User-Input Skript</h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb18-1" data-line-number="1"><span class="co"># Eingabe Name</span></a>
+<a class="sourceLine" id="cb18-2" data-line-number="2">name <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wie heißt du? &gt;&gt;&gt;&quot;</span>)</a>
+<a class="sourceLine" id="cb18-3" data-line-number="3"><span class="co"># Eingabe Alter</span></a>
+<a class="sourceLine" id="cb18-4" data-line-number="4">alter <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wie alt bist du? &gt;&gt;&gt;&quot;</span>)</a>
+<a class="sourceLine" id="cb18-5" data-line-number="5"><span class="co"># Eingabe Wohnort</span></a>
+<a class="sourceLine" id="cb18-6" data-line-number="6">ort <span class="op">=</span> <span class="bu">input</span>(<span class="st">&quot;Wo wohnst du? &gt;&gt;&gt;&quot;</span>)</a>
+<a class="sourceLine" id="cb18-7" data-line-number="7">jahr <span class="op">=</span> <span class="dv">2021</span> <span class="op">-</span> <span class="bu">int</span>(alter)</a>
+<a class="sourceLine" id="cb18-8" data-line-number="8"><span class="co"># Ausgabe</span></a>
+<a class="sourceLine" id="cb18-9" data-line-number="9"><span class="bu">print</span>(<span class="ss">f&quot;&quot;&quot;</span></a>
+<a class="sourceLine" id="cb18-10" data-line-number="10"><span class="ch">\n</span><span class="ss">Hallo </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">, schön, dass du da bist!</span><span class="ch">\n</span></a>
+<a class="sourceLine" id="cb18-11" data-line-number="11"><span class="ss">Du bist </span><span class="sc">{</span>jahr<span class="sc">}</span><span class="ss"> geboren.</span><span class="ch">\n</span></a>
+<a class="sourceLine" id="cb18-12" data-line-number="12"><span class="sc">{</span>ort<span class="sc">}</span><span class="ss"> ist der beste Ort auf dem Planeten.&quot;&quot;&quot;</span>)</a></code></pre></div>
+</section><section id="fehlerbehandlung-error-handling" class="slide level2">
+<h2>Fehlerbehandlung / error handling</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="bu">print</span>(<span class="st">&quot;Hallo Welt!&quot;</span></a>
+<a class="sourceLine" id="cb19-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb19-3" data-line-number="3">File <span class="st">&quot;&lt;ipython-input-5-e1aa54892f20&gt;&quot;</span>, line <span class="dv">1</span></a>
+<a class="sourceLine" id="cb19-4" data-line-number="4">    <span class="bu">print</span>(<span class="st">&quot;Hallo Welt!&quot;</span></a>
+<a class="sourceLine" id="cb19-5" data-line-number="5">                           <span class="op">^</span></a>
+<a class="sourceLine" id="cb19-6" data-line-number="6"><span class="pp">SyntaxError</span>: unexpected EOF <span class="cf">while</span> parsing</a></code></pre></div>
+</section><section id="fehlerbehandlung-error-handling-1" class="slide level2">
+<h2>Fehlerbehandlung / error handling</h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb20-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb20-3" data-line-number="3">File <span class="st">&quot;&lt;ipython-input-7-a12e79ce3754&gt;&quot;</span>, line <span class="dv">1</span></a>
+<a class="sourceLine" id="cb20-4" data-line-number="4">    <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb20-5" data-line-number="5">                      <span class="op">^</span></a>
+<a class="sourceLine" id="cb20-6" data-line-number="6"><span class="pp">SyntaxError</span>: invalid syntax</a></code></pre></div>
+</section><section id="fehlerbehandlung-error-handling-2" class="slide level2">
+<h2>Fehlerbehandlung / error handling</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</a>
+<a class="sourceLine" id="cb21-2" data-line-number="2"><span class="bu">print</span>(x)</a>
+<a class="sourceLine" id="cb21-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb21-4" data-line-number="4">File <span class="st">&quot;&lt;ipython-input-8-790af6e00d9b&gt;&quot;</span>, line <span class="dv">2</span></a>
+<a class="sourceLine" id="cb21-5" data-line-number="5">    <span class="bu">print</span>(x)</a>
+<a class="sourceLine" id="cb21-6" data-line-number="6">        <span class="op">^</span></a>
+<a class="sourceLine" id="cb21-7" data-line-number="7"><span class="pp">IndentationError</span>: expected an indented block</a></code></pre></div>
+</section><section id="help-function" class="slide level2">
+<h2>help() Function</h2>
+<div class="sourceCode" id="cb22"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb22-1" data-line-number="1"><span class="bu">help</span>(<span class="bu">len</span>)</a>
+<a class="sourceLine" id="cb22-2" data-line-number="2">Help on built<span class="op">-</span><span class="kw">in</span> function <span class="bu">len</span> <span class="kw">in</span> module builtins:</a>
+<a class="sourceLine" id="cb22-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb22-4" data-line-number="4"><span class="bu">len</span>(obj, <span class="op">/</span>)</a>
+<a class="sourceLine" id="cb22-5" data-line-number="5">    Return the number of items <span class="kw">in</span> a container.</a></code></pre></div>
+</section><section id="kontrollstrukturen" class="slide level2">
+<h2>Kontrollstrukturen</h2>
+</section><section id="for-schleife" class="slide level2">
+<h2>For-Schleife</h2>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb23-1" data-line-number="1"><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</a>
+<a class="sourceLine" id="cb23-2" data-line-number="2">    <span class="bu">print</span>(x)</a></code></pre></div>
+</section><section id="while-schleife" class="slide level2">
+<h2>While-Schleife</h2>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb24-1" data-line-number="1">x <span class="op">=</span> <span class="dv">10</span></a>
+<a class="sourceLine" id="cb24-2" data-line-number="2"><span class="cf">while</span> x <span class="op">&gt;</span> <span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb24-3" data-line-number="3">    <span class="bu">print</span>(x)</a>
+<a class="sourceLine" id="cb24-4" data-line-number="4">    x <span class="op">-=</span> <span class="dv">1</span></a></code></pre></div>
+</section><section id="if-anweisung" class="slide level2">
+<h2>If-Anweisung</h2>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb25-1" data-line-number="1"><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">11</span>):</a>
+<a class="sourceLine" id="cb25-2" data-line-number="2">    <span class="cf">if</span> x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb25-3" data-line-number="3">        <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{x}</span><span class="ss"> ist eine gerade Zahl.&quot;</span>)</a>
+<a class="sourceLine" id="cb25-4" data-line-number="4">    <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb25-5" data-line-number="5">        <span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{x}</span><span class="ss"> ist eine ungerade Zahl.&quot;</span>)</a></code></pre></div>
+</section><section id="dateien-lesen-1" class="slide level2">
+<h2>Dateien lesen 1</h2>
+<div class="sourceCode" id="cb26"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb26-1" data-line-number="1">f <span class="op">=</span> <span class="bu">open</span>(<span class="st">&quot;DATEI.txt&quot;</span>, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>)</a>
+<a class="sourceLine" id="cb26-2" data-line-number="2">text <span class="op">=</span> f.read()</a>
+<a class="sourceLine" id="cb26-3" data-line-number="3">f.close()</a></code></pre></div>
+</section><section id="dateien-lesen-2" class="slide level2">
+<h2>Dateien lesen 2</h2>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb27-1" data-line-number="1"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&quot;DATEI.txt&quot;</span>, <span class="st">&quot;r&quot;</span>, encoding<span class="op">=</span><span class="st">&quot;utf-8&quot;</span>) <span class="im">as</span> f:</a>
+<a class="sourceLine" id="cb27-2" data-line-number="2">    text <span class="op">=</span> f.read()</a></code></pre></div>
+</section><section id="io-parameter" class="slide level2">
+<h2>I/O Parameter</h2>
+<ul>
+<li>“r” = read / lesen</li>
+<li>“w” = write / schreiben</li>
+<li>“a” = append / anhängen</li>
+</ul>
+</section></section>
+<section><section id="block-5-pseudo-code" class="title-slide slide level1"><h1>Block 5: Pseudo-Code</h1></section><section id="algorithmisches-denken" class="slide level2">
+<h2>algorithmisches Denken</h2>
+<ul>
+<li>Problem in einzelne Schritte zerlegen</li>
+<li>Schritte ausformulieren</li>
+<li>einzelne Bauteile zusammenstellen</li>
+</ul>
+</section><section id="pseudo-code" class="slide level2">
+<h2>Pseudo Code</h2>
+<pre><code>TEXT =  &quot;text&quot;
+
+LOOP OVER TEXT
+
+    IF ELEMENT IS VOWEL
+
+        PRINT ELEMENT</code></pre>
+</section><section id="vorteil" class="slide level2">
+<h2>Vorteil</h2>
+<ul>
+<li>Vorgehen wird klarer</li>
+<li>Konzepte verstehen</li>
+<li>Übertragbar auf andere Programmiersprachen</li>
+</ul>
+</section><section id="problemstellung" class="slide level2">
+<h2>Problemstellung</h2>
+<p>Für die Zahlen zwischen 1 und 100 soll:</p>
+<ul>
+<li>FizzBuzz ausgegeben werden, wenn die Zahl durch 3 und 5 teilbar ist</li>
+<li>Fizz ausgegeben werden, wenn die Zahl durch 3 teilbar ist</li>
+<li>Buzz ausgegeben werden, wenn die Zahl durch 5 teilbar ist</li>
+</ul>
+</section><section id="pseudo-code-beispiel" class="slide level2">
+<h2>Pseudo-Code Beispiel</h2>
+<pre><code>FOR i from 1 TO 100 DO
+    IF i is divisible by 3 AND i is divisible by 5 THEN
+        OUTPUT &quot;FizzBuzz&quot;
+    ELSE IF i is divisible by 3 THEN
+        OUTPUT &quot;Fizz&quot;
+    ELSE IF i is divisible by 5 THEN
+        OUTPUT &quot;Buzz&quot;
+    ELSE
+        OUTPUT i</code></pre>
+</section><section id="pseudo-code-in-python" class="slide level2">
+<h2>Pseudo-Code in Python</h2>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">100</span>):</a>
+<a class="sourceLine" id="cb30-2" data-line-number="2">    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb30-3" data-line-number="3">        <span class="bu">print</span>(<span class="st">&#39;FizzBuzz&#39;</span>)</a>
+<a class="sourceLine" id="cb30-4" data-line-number="4">    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb30-5" data-line-number="5">        <span class="bu">print</span>(<span class="st">&#39;Fizz&#39;</span>)</a>
+<a class="sourceLine" id="cb30-6" data-line-number="6">    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb30-7" data-line-number="7">        <span class="bu">print</span>(<span class="st">&#39;Buzz&#39;</span>)</a>
+<a class="sourceLine" id="cb30-8" data-line-number="8">    <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb30-9" data-line-number="9">        <span class="bu">print</span>(i)</a></code></pre></div>
+</section></section>
+<section><section id="block-6-funktionen-textprocessing" class="title-slide slide level1"><h1>Block 6: Funktionen Textprocessing</h1></section><section id="text-datei-runterladen" class="slide level2">
+<h2>Text-Datei runterladen</h2>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="im">import</span> requests</a>
+<a class="sourceLine" id="cb31-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb31-3" data-line-number="3">gg_raw_url <span class="op">=</span> <span class="st">&quot;https://raw.githubusercontent.com/levinalex/deutsche_verfassungen/master/grundgesetz/grundgesetz.txt&quot;</span></a>
+<a class="sourceLine" id="cb31-4" data-line-number="4">response <span class="op">=</span> requests.get(gg_raw_url)</a>
+<a class="sourceLine" id="cb31-5" data-line-number="5">grundgesetz <span class="op">=</span> response.text</a>
+<a class="sourceLine" id="cb31-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb31-7" data-line-number="7">grundgesetz[:<span class="dv">1000</span>]</a></code></pre></div>
+</section><section id="text-datei-speichern" class="slide level2">
+<h2>Text-Datei speichern</h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;grundgesetz.txt&#39;</span>, <span class="st">&#39;w&#39;</span>, encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> f:</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2">    f.write(grundgesetz)</a></code></pre></div>
+</section><section id="kleinschreibung-vereinheitlichen" class="slide level2">
+<h2>Kleinschreibung vereinheitlichen</h2>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" data-line-number="1">grundgesetz <span class="op">=</span> grundgesetz.lower()</a>
+<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="bu">print</span>(grundgesetz[:<span class="dv">250</span>])</a></code></pre></div>
+</section><section id="zeichensetzung-entfernen" class="slide level2">
+<h2>Zeichensetzung entfernen</h2>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="im">import</span> string</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb34-3" data-line-number="3"><span class="kw">def</span> remove_punctuation(text):</a>
+<a class="sourceLine" id="cb34-4" data-line-number="4">    punctuation <span class="op">=</span> string.punctuation</a>
+<a class="sourceLine" id="cb34-5" data-line-number="5">    <span class="cf">for</span> marker <span class="kw">in</span> punctuation:</a>
+<a class="sourceLine" id="cb34-6" data-line-number="6">        text <span class="op">=</span> text.replace(marker, <span class="st">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="cb34-7" data-line-number="7">    <span class="cf">return</span> text</a>
+<a class="sourceLine" id="cb34-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb34-9" data-line-number="9">grundgesetz <span class="op">=</span> remove_punctuation(grundgesetz)</a>
+<a class="sourceLine" id="cb34-10" data-line-number="10"><span class="bu">print</span>(grundgesetz[:<span class="dv">250</span>])</a></code></pre></div>
+</section><section id="liste-erstellen" class="slide level2">
+<h2>Liste erstellen</h2>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb35-1" data-line-number="1">grundgesetz_words <span class="op">=</span> grundgesetz.split()</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="bu">print</span>(<span class="st">&quot;Anzahl aller Worte des Textes: &quot;</span>)</a>
+<a class="sourceLine" id="cb36-2" data-line-number="2"><span class="bu">print</span>(<span class="bu">len</span>(grundgesetz_words)))</a>
+<a class="sourceLine" id="cb36-3" data-line-number="3"><span class="bu">print</span>(<span class="st">&quot;=======&quot;</span>)</a>
+<a class="sourceLine" id="cb36-4" data-line-number="4"><span class="bu">print</span>(grundgesetz_words[:<span class="dv">25</span>])</a></code></pre></div>
+</section><section id="zählen-eines-bestimmten-worts" class="slide level2">
+<h2>Zählen eines bestimmten Worts</h2>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">def</span> count_item_in_text(item_to_count, list_to_search):</a>
+<a class="sourceLine" id="cb37-2" data-line-number="2">    number_of_hits <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb37-3" data-line-number="3">    <span class="cf">for</span> item <span class="kw">in</span> list_to_search:</a>
+<a class="sourceLine" id="cb37-4" data-line-number="4">        <span class="cf">if</span> item <span class="op">==</span> item_to_count:</a>
+<a class="sourceLine" id="cb37-5" data-line-number="5">            number_of_hits <span class="op">+=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb37-6" data-line-number="6">    <span class="cf">return</span> number_of_hits</a>
+<a class="sourceLine" id="cb37-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb37-8" data-line-number="8"><span class="bu">print</span>(count_item_in_text(<span class="st">&quot;freiheit&quot;</span>, grundgesetz_words))</a></code></pre></div>
+</section><section id="alle-wörter-zählen-mit-hilfe-eines-dictionarys" class="slide level2">
+<h2>Alle Wörter zählen mit Hilfe eines Dictionarys</h2>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">def</span> counter_dict(list_to_search):</a>
+<a class="sourceLine" id="cb38-2" data-line-number="2">    counts <span class="op">=</span> {}</a>
+<a class="sourceLine" id="cb38-3" data-line-number="3">    <span class="cf">for</span> word <span class="kw">in</span> list_to_search:</a>
+<a class="sourceLine" id="cb38-4" data-line-number="4">        <span class="cf">if</span> word <span class="kw">in</span> counts:</a>
+<a class="sourceLine" id="cb38-5" data-line-number="5">            counts[word] <span class="op">=</span> counts[word] <span class="op">+</span> <span class="dv">1</span>  </a>
+<a class="sourceLine" id="cb38-6" data-line-number="6">        <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb38-7" data-line-number="7">            counts[word] <span class="op">=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb38-8" data-line-number="8">    <span class="cf">return</span> counts</a>
+<a class="sourceLine" id="cb38-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb38-10" data-line-number="10"><span class="bu">print</span>(counter_dict(grundgesetz_words))</a></code></pre></div>
+</section><section id="worthäufigkeiten-sortieren" class="slide level2">
+<h2>Worthäufigkeiten sortieren</h2>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">def</span> freq_sort(list_to_search):</a>
+<a class="sourceLine" id="cb39-2" data-line-number="2">    counts <span class="op">=</span> counter_dict(list_to_search)</a>
+<a class="sourceLine" id="cb39-3" data-line-number="3">    counts <span class="op">=</span> [(counts[key], key) <span class="cf">for</span> key <span class="kw">in</span> counts]</a>
+<a class="sourceLine" id="cb39-4" data-line-number="4">    counts.sort()</a>
+<a class="sourceLine" id="cb39-5" data-line-number="5">    counts.reverse()</a>
+<a class="sourceLine" id="cb39-6" data-line-number="6">    <span class="cf">return</span> counts</a>
+<a class="sourceLine" id="cb39-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb39-8" data-line-number="8"><span class="bu">print</span>(freq_sort(grundgesetz_words)[:<span class="dv">25</span>])</a></code></pre></div>
+</section><section id="entfernen-von-stoppwörtern" class="slide level2">
+<h2>Entfernen von Stoppwörtern</h2>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="im">import</span> requests</a>
+<a class="sourceLine" id="cb40-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb40-3" data-line-number="3"><span class="kw">def</span> remove_stopwords(list_to_search):</a>
+<a class="sourceLine" id="cb40-4" data-line-number="4">    stopword_url <span class="op">=</span> <span class="st">&quot;http://members.unine.ch/jacques.savoy/clef/germanST.txt&quot;</span></a>
+<a class="sourceLine" id="cb40-5" data-line-number="5">    response <span class="op">=</span> requests.get(stopword_url)</a>
+<a class="sourceLine" id="cb40-6" data-line-number="6">    stopwords <span class="op">=</span> response.text</a>
+<a class="sourceLine" id="cb40-7" data-line-number="7">    stopwords <span class="op">=</span> stopwords.split()</a>
+<a class="sourceLine" id="cb40-8" data-line-number="8">    <span class="cf">return</span> [w <span class="cf">for</span> w <span class="kw">in</span> list_to_search <span class="cf">if</span> w <span class="kw">not</span> <span class="kw">in</span> stopwords]</a>
+<a class="sourceLine" id="cb40-9" data-line-number="9">  </a>
+<a class="sourceLine" id="cb40-10" data-line-number="10"><span class="bu">print</span>(remove_stopwords(grundgesetz_words)[:<span class="dv">25</span>])</a></code></pre></div>
+</section><section id="funktionsaufrufe" class="slide level2">
+<h2>Funktionsaufrufe</h2>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb41-1" data-line-number="1">grundgesetz <span class="op">=</span> grundgesetz.lower()</a>
+<a class="sourceLine" id="cb41-2" data-line-number="2">grundgesetz <span class="op">=</span> remove_punctuation(grundgesetz)</a>
+<a class="sourceLine" id="cb41-3" data-line-number="3">grundgesetz_words <span class="op">=</span> grundgesetz.split()</a>
+<a class="sourceLine" id="cb41-4" data-line-number="4">grundgesetz_words <span class="op">=</span> remove_stopwords(grundgesetz_words)</a>
+<a class="sourceLine" id="cb41-5" data-line-number="5"><span class="bu">print</span>(freq_count(grundgesetz_words)[:<span class="dv">25</span>])</a></code></pre></div>
+</section></section>
+<section><section id="block-7-nltk" class="title-slide slide level1"><h1>Block 7: NLTK</h1></section><section id="collections" class="slide level2">
+<h2>collections</h2>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="im">from</span> collections <span class="im">import</span> Counter</a>
+<a class="sourceLine" id="cb42-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb42-3" data-line-number="3">freq <span class="op">=</span> Counter(grundgesetz_words)</a></code></pre></div>
+</section><section id="most-common" class="slide level2">
+<h2>most common</h2>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="bu">print</span>(freq.most_common(<span class="dv">25</span>))</a></code></pre></div>
+</section><section id="nltk" class="slide level2">
+<h2>NLTK</h2>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="im">import</span> nltk</a>
+<a class="sourceLine" id="cb44-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb44-3" data-line-number="3"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;grundgesetz.txt&#39;</span>, <span class="st">&#39;r&#39;</span> encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> infile:</a>
+<a class="sourceLine" id="cb44-4" data-line-number="4">    text_raw <span class="op">=</span> infile.read()</a>
+<a class="sourceLine" id="cb44-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb44-6" data-line-number="6">text <span class="op">=</span> text_raw.lower()</a>
+<a class="sourceLine" id="cb44-7" data-line-number="7">text <span class="op">=</span> text.split()</a>
+<a class="sourceLine" id="cb44-8" data-line-number="8">text <span class="op">=</span> nltk.Text(text)  </a></code></pre></div>
+</section><section id="concordance" class="slide level2">
+<h2>concordance</h2>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb45-1" data-line-number="1">text.concordance(<span class="st">&quot;freiheit&quot;</span>)</a></code></pre></div>
+</section><section id="similar" class="slide level2">
+<h2>similar</h2>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb46-1" data-line-number="1">text.similar(<span class="st">&quot;freiheit&quot;</span>)</a></code></pre></div>
+</section><section id="dispersion-plot" class="slide level2">
+<h2>dispersion plot</h2>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb47-1" data-line-number="1">text.dispersion_plot([<span class="st">&quot;artikel&quot;</span>, <span class="st">&quot;gesetz&quot;</span>, <span class="st">&quot;freiheit&quot;</span>])</a></code></pre></div>
+</section></section>
+<section><section id="block-8-web-scraping" class="title-slide slide level1"><h1>Block 8: Web Scraping</h1></section><section id="ziel-des-web-scraping" class="slide level2">
+<h2>Ziel des Web Scraping</h2>
+<ul>
+<li>Posts vom Blog der AG Digitale Geschichtswissenschaft bei hypotheses.org</li>
+<li><a href="https://digigw.hypotheses.org/" class="uri">https://digigw.hypotheses.org/</a></li>
+</ul>
+</section><section id="zutaten-für-das-skript" class="slide level2">
+<h2>Zutaten für das Skript</h2>
+<ul>
+<li>Webseite aufrufen</li>
+<li>html erfassen</li>
+<li>html parsen</li>
+<li>Text extrahieren</li>
+<li>Text in Datei speichern</li>
+<li>Datei benennen</li>
+</ul>
+</section><section id="inspektion-der-webseite" class="slide level2">
+<h2>Inspektion der Webseite</h2>
+<ul>
+<li>Gibt es eine serielle URL?</li>
+<li>Wie ist diese aufgebaut?</li>
+<li>In welchem html-div findet sich Text?</li>
+</ul>
+</section><section id="serielle-url" class="slide level2">
+<h2>serielle URL</h2>
+<p><a href="https://digigw.hypotheses.org/3653" class="uri">https://digigw.hypotheses.org/3653</a></p>
+</section><section id="webseiten-inspektor" class="slide level2">
+<h2>Webseiten Inspektor</h2>
+<p><strong>STRG + SHIFT + I</strong></p>
+<!-- ## Ansicht Inspektor
+
+<img src="
+../images/snapshot_inspector.png" alt="Drawing" style="width:
+700px;"/> -->
+</section><section id="bausteine-des-skripts-i" class="slide level2">
+<h2>Bausteine des Skripts I</h2>
+<ul>
+<li>Import der benötigten Module und Bibliotheken</li>
+<li>URL-Root einrichten Variablen benennen</li>
+<li>Startseite bzw. Indexseite anfragen</li>
+<li>html in Variable speichern</li>
+<li>IDs der Blogposts aus html extrahieren</li>
+<li>IDs der Blogposts in Liste speichern</li>
+<li>for-Schleife zur wiederholten Anwendung</li>
+</ul>
+</section><section id="bausteine-des-skripts-ii" class="slide level2">
+<h2>Bausteine des Skripts II</h2>
+<ul>
+<li>aus der Liste der IDs URL zusammensetzen und anfragen</li>
+<li>html in Variable speichern</li>
+<li>Text des Posts aus html extrahieren</li>
+<li>Text in Datei speichern</li>
+<li>for-Schleife zur wiederholten Anwendung</li>
+</ul>
+</section><section id="import-der-module" class="slide level2">
+<h2>Import der Module</h2>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="im">import</span> request</a>
+<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="im">import</span> time</a>
+<a class="sourceLine" id="cb48-3" data-line-number="3"><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</a></code></pre></div>
+</section><section id="url-root-und-variablen" class="slide level2">
+<h2>URL-Root und Variablen</h2>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb49-1" data-line-number="1">url_root <span class="op">=</span> <span class="st">&#39;https://digigw.hypotheses.org/&#39;</span></a>
+<a class="sourceLine" id="cb49-2" data-line-number="2">blog_ID_list <span class="op">=</span> []</a>
+<a class="sourceLine" id="cb49-3" data-line-number="3">article_length_list <span class="op">=</span> []</a></code></pre></div>
+</section><section id="schleife-ids" class="slide level2">
+<h2>Schleife IDs</h2>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">19</span>):</a>
+<a class="sourceLine" id="cb50-2" data-line-number="2">    url <span class="op">=</span> url_root <span class="op">+</span> <span class="st">&#39;page/&#39;</span> <span class="op">+</span> <span class="bu">str</span>(x)</a>
+<a class="sourceLine" id="cb50-3" data-line-number="3">    response <span class="op">=</span> requests.get(url)</a>
+<a class="sourceLine" id="cb50-4" data-line-number="4">    response <span class="op">=</span> response.text</a>
+<a class="sourceLine" id="cb50-5" data-line-number="5">    soup <span class="op">=</span> BeautifulSoup(response, <span class="st">&#39;html.parser&#39;</span>)</a>
+<a class="sourceLine" id="cb50-6" data-line-number="6">    blog_IDs <span class="op">=</span> soup.find_all(<span class="st">&#39;h2&#39;</span>,</a>
+<a class="sourceLine" id="cb50-7" data-line-number="7">                             {<span class="st">&#39;class&#39;</span>: <span class="st">&#39;entry-title&#39;</span>})    </a>
+<a class="sourceLine" id="cb50-8" data-line-number="8">    <span class="cf">for</span> element <span class="kw">in</span> blog_IDs:</a>
+<a class="sourceLine" id="cb50-9" data-line-number="9">        blog_ID <span class="op">=</span> element.find(<span class="st">&#39;a&#39;</span>)[<span class="st">&#39;href&#39;</span>]</a>
+<a class="sourceLine" id="cb50-10" data-line-number="10">        blog_ID <span class="op">=</span> blog_ID.split(<span class="st">&#39;/&#39;</span>)</a>
+<a class="sourceLine" id="cb50-11" data-line-number="11">        blog_ID <span class="op">=</span> blog_ID[<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb50-12" data-line-number="12">        blog_ID_list.append(blog_ID)    </a>
+<a class="sourceLine" id="cb50-13" data-line-number="13">    time.sleep(<span class="dv">5</span>)</a></code></pre></div>
+</section><section id="schleife-text" class="slide level2">
+<h2>Schleife Text</h2>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="cf">for</span> x <span class="kw">in</span> blog_ID_list:    </a>
+<a class="sourceLine" id="cb51-2" data-line-number="2">    <span class="cf">try</span>:</a>
+<a class="sourceLine" id="cb51-3" data-line-number="3">        response <span class="op">=</span> requests.get(url_root <span class="op">+</span> <span class="bu">str</span>(x))</a>
+<a class="sourceLine" id="cb51-4" data-line-number="4">        response <span class="op">=</span> response.text </a>
+<a class="sourceLine" id="cb51-5" data-line-number="5">        soup <span class="op">=</span> BeautifulSoup(response, <span class="st">&quot;html.parser&quot;</span>)</a>
+<a class="sourceLine" id="cb51-6" data-line-number="6">        article_text <span class="op">=</span> soup.find(</a>
+<a class="sourceLine" id="cb51-7" data-line-number="7">                        attrs<span class="op">=</span>{<span class="st">&quot;class&quot;</span>: <span class="st">&quot;entry-content&quot;</span>}</a>
+<a class="sourceLine" id="cb51-8" data-line-number="8">                        ).text.strip()</a>
+<a class="sourceLine" id="cb51-9" data-line-number="9">        article_length_list.append(<span class="bu">len</span>(article_text))</a>
+<a class="sourceLine" id="cb51-10" data-line-number="10">        <span class="cf">with</span> <span class="bu">open</span>(<span class="vs">r&#39;./data-blog-posts/digigw-blog_&#39;</span> </a>
+<a class="sourceLine" id="cb51-11" data-line-number="11">                    <span class="op">+</span> <span class="bu">str</span>(x) <span class="op">+</span> <span class="st">&#39;.txt&#39;</span>, </a>
+<a class="sourceLine" id="cb51-12" data-line-number="12">                    <span class="st">&#39;w&#39;</span>, encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> infile:</a>
+<a class="sourceLine" id="cb51-13" data-line-number="13">            infile.write(article_text)   </a>
+<a class="sourceLine" id="cb51-14" data-line-number="14">        time.sleep(<span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb51-15" data-line-number="15">    <span class="cf">except</span>:</a>
+<a class="sourceLine" id="cb51-16" data-line-number="16">        <span class="cf">continue</span></a></code></pre></div>
+</section><section id="ausgabe-ergebnisse" class="slide level2">
+<h2>Ausgabe Ergebnisse</h2>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="bu">print</span>(blog_ID_list)</a>
+<a class="sourceLine" id="cb52-2" data-line-number="2"><span class="bu">print</span>(<span class="st">&#39;Gesamtanzahl der Blogbeiträge: &#39;</span>) </a>
+<a class="sourceLine" id="cb52-3" data-line-number="3"><span class="bu">print</span>(<span class="bu">str</span>(<span class="bu">len</span>(blog_ID_list)))</a>
+<a class="sourceLine" id="cb52-4" data-line-number="4"><span class="bu">print</span>(<span class="st">&#39;Anzahl der Zeichen des längsten Blogbeitrags: &#39;</span>)</a>
+<a class="sourceLine" id="cb52-5" data-line-number="5"><span class="bu">print</span>(<span class="bu">str</span>(<span class="bu">max</span>(article_length_list)))</a>
+<a class="sourceLine" id="cb52-6" data-line-number="6"><span class="bu">print</span>(<span class="st">&#39;Anzahl der Zeichen des kürzsten Blogbeitrags: &#39;</span>)</a>
+<a class="sourceLine" id="cb52-7" data-line-number="7"><span class="bu">print</span>(<span class="bu">str</span>(<span class="bu">min</span>(article_length_list)))</a>
+<a class="sourceLine" id="cb52-8" data-line-number="8"><span class="bu">print</span>(<span class="st">&#39;Anzahl der Zeichen der Blogbeiträge im Durchschnit: &#39;</span>)</a>
+<a class="sourceLine" id="cb52-9" data-line-number="9"><span class="bu">print</span>(<span class="bu">str</span>(<span class="bu">sum</span>(article_length_list) <span class="op">/</span> <span class="bu">len</span>(article_length)))</a></code></pre></div>
+</section></section>
+<section><section id="block-9-hilfe-zur-selbsthilfe" class="title-slide slide level1"><h1>Block 9: Hilfe zur Selbsthilfe</h1></section><section id="tutorials" class="slide level2">
+<h2>Tutorials</h2>
+<p><a href="https://www.learnpython.org/">learnpython.org</a></p>
+<p><a href="https://realpython.com/" class="uri">https://realpython.com/</a></p>
+<p><a href="https://docs.python.org/3/tutorial/" class="uri">https://docs.python.org/3/tutorial/</a></p>
+<p><a href="https://www.python-kurs.eu/" class="uri">https://www.python-kurs.eu/</a></p>
+<p><a href="https://programminghistorian.org/lessons/?topic=python" class="uri">https://programminghistorian.org/lessons/?topic=python</a></p>
+</section><section id="links" class="slide level2">
+<h2>Links</h2>
+<p><a href="https://www.python.org/doc/" class="uri">https://www.python.org/doc/</a></p>
+<p><a href="https://www.python.org/community/" class="uri">https://www.python.org/community/</a></p>
+<p><a href="https://www.python-forum.de/" class="uri">https://www.python-forum.de/</a></p>
+<p><a href="https://stackoverflow.com/" class="uri">https://stackoverflow.com/</a></p>
+</section><section id="bücher-online" class="slide level2">
+<h2>Bücher: Online</h2>
+<p><a href="https://automatetheboringstuff.com/" class="uri">https://automatetheboringstuff.com/</a></p>
+<p><a href="https://www.nltk.org/book/" class="uri">https://www.nltk.org/book/</a></p>
+</section><section id="offene-fragen" class="slide level2">
+<h2>offene Fragen</h2>
+</section><section id="feedback-runde" class="slide level2">
+<h2>Feedback-Runde</h2>
+</section><section id="zum-abschluss" class="slide level2">
+<h2>Zum Abschluss</h2>
+<p><a href="https://www.youtube.com/watch?v=HluANRwPyNo">What people think programming is vs. how it actually is</a></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/reveal.js@3.9.2//lib/js/head.min.js"></script>
+  <script src="https://unpkg.com/reveal.js@3.9.2//js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'https://unpkg.com/reveal.js@3.9.2//lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://unpkg.com/reveal.js@3.9.2//plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://unpkg.com/reveal.js@3.9.2//plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
