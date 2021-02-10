@@ -19,7 +19,7 @@ print(freq.most_common(25))
 ```python
 import nltk
 
-with open('grundgesetz.txt', 'r' encoding='utf-8') as infile:
+with open('grundgesetz.txt', 'r', encoding='utf-8') as infile:
     text_raw = infile.read()
 
 text = text_raw.lower()

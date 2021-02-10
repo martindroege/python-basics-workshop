@@ -1,0 +1,6 @@
+requests
+nltk
+bs4
+time
+string
+collections

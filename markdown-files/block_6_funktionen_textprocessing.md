@@ -49,7 +49,7 @@ grundgesetz_words = grundgesetz.split()
 
 ```python
 print("Anzahl aller Worte des Textes: ")
-print(len(grundgesetz_words)))
+print(len(grundgesetz_words))
 print("=======")
 print(grundgesetz_words[:25])
 ```

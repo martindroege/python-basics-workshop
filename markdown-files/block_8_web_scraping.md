@@ -55,7 +55,7 @@
 ## Import der Module
 
 ```Python
-import request
+import requests
 import time
 from bs4 import BeautifulSoup
 ```
@@ -118,5 +118,5 @@ print(str(max(article_length_list)))
 print('Anzahl der Zeichen des kürzsten Blogbeitrags: ')
 print(str(min(article_length_list)))
 print('Anzahl der Zeichen der Blogbeiträge im Durchschnit: ')
-print(str(sum(article_length_list) / len(article_length)))
+print(str(sum(article_length_list) / len(article_length_list)))
 ```

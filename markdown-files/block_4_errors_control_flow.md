@@ -109,3 +109,9 @@ with open("DATEI.txt", "r", encoding="utf-8") as f:
 * "r" = read / lesen
 * "w" = write / schreiben
 * "a" = append / anhängen
+
+## Kommentar
+
+```Python
+# Dies ist ein Kommentar
+```
