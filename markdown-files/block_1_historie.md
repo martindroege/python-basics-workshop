@@ -16,8 +16,13 @@
 * ursprünglicher Zweck: Programmieren vermitteln
 * Name geht nicht auf die Schlange, sondern auf Monty Python zurück
 * Dezember 2008: Version 3.0 -> vollständig auf Unicode umgestellt
-* aktuelle Version Python 3.9.1
-<!-- * Juli 2018: Guido van Rossum tritt als "Benevolent Dictator for Life" (BDFL) -->
+* aktuelle Version Python 3.9.2
+  <!-- * Juli 2018: Guido van Rossum tritt als "Benevolent Dictator for Life" (BDFL) -->
+
+## 30 Jahre Python
+
+* offizieller Startschuss fiel am 20. Februar 1991
+* [Artikel zum Python-Jubiläum](https://www.heise.de/news/Python-Jubilaeum-30-Jahre-und-kein-bisschen-leise-5062143.html)
 
 ## Python als Skriptsprache
 

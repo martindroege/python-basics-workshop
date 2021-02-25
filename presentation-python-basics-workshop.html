@@ -170,7 +170,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>ursprünglicher Zweck: Programmieren vermitteln</li>
 <li>Name geht nicht auf die Schlange, sondern auf Monty Python zurück</li>
 <li>Dezember 2008: Version 3.0 -&gt; vollständig auf Unicode umgestellt</li>
-<li>aktuelle Version Python 3.9.1 <!-- * Juli 2018: Guido van Rossum tritt als "Benevolent Dictator for Life" (BDFL) --></li>
+<li>aktuelle Version Python 3.9.2 <!-- * Juli 2018: Guido van Rossum tritt als "Benevolent Dictator for Life" (BDFL) --></li>
+</ul>
+</section><section id="jahre-python" class="slide level2">
+<h2>30 Jahre Python</h2>
+<ul>
+<li>offizieller Startschuss fiel am 20. Februar 1991</li>
+<li><a href="https://www.heise.de/news/Python-Jubilaeum-30-Jahre-und-kein-bisschen-leise-5062143.html">Artikel zum Python-Jubiläum</a></li>
 </ul>
 </section><section id="python-als-skriptsprache" class="slide level2">
 <h2>Python als Skriptsprache</h2>
@@ -336,6 +342,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb6-5" data-line-number="5">event.lower()</a>
 <a class="sourceLine" id="cb6-6" data-line-number="6"></a>
 <a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">&quot;Digital History Tagung&quot;</span>.upper()</a></code></pre></div>
+</section><section id="built-in-functions" class="slide level2">
+<h2>Built-in Functions</h2>
+<ul>
+<li><a href="https://docs.python.org/3/library/functions.html">Übersicht und Dokumentation</a></li>
+<li>Grundsätzlich: Dokumentationen helfen oft weiter!</li>
+</ul>
 </section><section id="listen-lists" class="slide level2">
 <h2>Listen / Lists</h2>
 <div class="sourceCode" id="cb7"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb7-1" data-line-number="1">list_1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</a>
@@ -468,6 +480,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <a class="sourceLine" id="cb22-3" data-line-number="3"></a>
 <a class="sourceLine" id="cb22-4" data-line-number="4"><span class="bu">len</span>(obj, <span class="op">/</span>)</a>
 <a class="sourceLine" id="cb22-5" data-line-number="5">    Return the number of items <span class="kw">in</span> a container.</a></code></pre></div>
+</section><section id="weitere-hilfen" class="slide level2">
+<h2>weitere Hilfen</h2>
+<ul>
+<li>var. + [TAB] erzeugt Vorschau</li>
+<li>var.lower? erklärt Methoden</li>
+<li>[TAB] bietet Autovervollständigung</li>
+</ul>
 </section><section id="kontrollstrukturen" class="slide level2">
 <h2>Kontrollstrukturen</h2>
 </section><section id="for-schleife" class="slide level2">
@@ -503,6 +522,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>“w” = write / schreiben</li>
 <li>“a” = append / anhängen</li>
 </ul>
+</section><section id="kommentar" class="slide level2">
+<h2>Kommentar</h2>
+<div class="sourceCode" id="cb28"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb28-1" data-line-number="1"><span class="co"># Dies ist ein Kommentar</span></a></code></pre></div>
 </section></section>
 <section><section id="block-5-pseudo-code" class="title-slide slide level1"><h1>Block 5: Pseudo-Code</h1></section><section id="algorithmisches-denken" class="slide level2">
 <h2>algorithmisches Denken</h2>
@@ -548,131 +570,131 @@ LOOP OVER TEXT
         OUTPUT i</code></pre>
 </section><section id="pseudo-code-in-python" class="slide level2">
 <h2>Pseudo-Code in Python</h2>
-<div class="sourceCode" id="cb30"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb30-1" data-line-number="1"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">100</span>):</a>
-<a class="sourceLine" id="cb30-2" data-line-number="2">    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</a>
-<a class="sourceLine" id="cb30-3" data-line-number="3">        <span class="bu">print</span>(<span class="st">&#39;FizzBuzz&#39;</span>)</a>
-<a class="sourceLine" id="cb30-4" data-line-number="4">    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</a>
-<a class="sourceLine" id="cb30-5" data-line-number="5">        <span class="bu">print</span>(<span class="st">&#39;Fizz&#39;</span>)</a>
-<a class="sourceLine" id="cb30-6" data-line-number="6">    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</a>
-<a class="sourceLine" id="cb30-7" data-line-number="7">        <span class="bu">print</span>(<span class="st">&#39;Buzz&#39;</span>)</a>
-<a class="sourceLine" id="cb30-8" data-line-number="8">    <span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb30-9" data-line-number="9">        <span class="bu">print</span>(i)</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">100</span>):</a>
+<a class="sourceLine" id="cb31-2" data-line-number="2">    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span> <span class="kw">and</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb31-3" data-line-number="3">        <span class="bu">print</span>(<span class="st">&#39;FizzBuzz&#39;</span>)</a>
+<a class="sourceLine" id="cb31-4" data-line-number="4">    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">3</span> <span class="op">==</span> <span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb31-5" data-line-number="5">        <span class="bu">print</span>(<span class="st">&#39;Fizz&#39;</span>)</a>
+<a class="sourceLine" id="cb31-6" data-line-number="6">    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</a>
+<a class="sourceLine" id="cb31-7" data-line-number="7">        <span class="bu">print</span>(<span class="st">&#39;Buzz&#39;</span>)</a>
+<a class="sourceLine" id="cb31-8" data-line-number="8">    <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb31-9" data-line-number="9">        <span class="bu">print</span>(i)</a></code></pre></div>
 </section></section>
 <section><section id="block-6-funktionen-textprocessing" class="title-slide slide level1"><h1>Block 6: Funktionen Textprocessing</h1></section><section id="text-datei-runterladen" class="slide level2">
 <h2>Text-Datei runterladen</h2>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb31-1" data-line-number="1"><span class="im">import</span> requests</a>
-<a class="sourceLine" id="cb31-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb31-3" data-line-number="3">gg_raw_url <span class="op">=</span> <span class="st">&quot;https://raw.githubusercontent.com/levinalex/deutsche_verfassungen/master/grundgesetz/grundgesetz.txt&quot;</span></a>
-<a class="sourceLine" id="cb31-4" data-line-number="4">response <span class="op">=</span> requests.get(gg_raw_url)</a>
-<a class="sourceLine" id="cb31-5" data-line-number="5">grundgesetz <span class="op">=</span> response.text</a>
-<a class="sourceLine" id="cb31-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb31-7" data-line-number="7">grundgesetz[:<span class="dv">1000</span>]</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="im">import</span> requests</a>
+<a class="sourceLine" id="cb32-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb32-3" data-line-number="3">gg_raw_url <span class="op">=</span> <span class="st">&quot;https://raw.githubusercontent.com/levinalex/deutsche_verfassungen/master/grundgesetz/grundgesetz.txt&quot;</span></a>
+<a class="sourceLine" id="cb32-4" data-line-number="4">response <span class="op">=</span> requests.get(gg_raw_url)</a>
+<a class="sourceLine" id="cb32-5" data-line-number="5">grundgesetz <span class="op">=</span> response.text</a>
+<a class="sourceLine" id="cb32-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb32-7" data-line-number="7">grundgesetz[:<span class="dv">1000</span>]</a></code></pre></div>
 </section><section id="text-datei-speichern" class="slide level2">
 <h2>Text-Datei speichern</h2>
-<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb32-1" data-line-number="1"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;grundgesetz.txt&#39;</span>, <span class="st">&#39;w&#39;</span>, encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> f:</a>
-<a class="sourceLine" id="cb32-2" data-line-number="2">    f.write(grundgesetz)</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" data-line-number="1"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;grundgesetz.txt&#39;</span>, <span class="st">&#39;w&#39;</span>, encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> f:</a>
+<a class="sourceLine" id="cb33-2" data-line-number="2">    f.write(grundgesetz)</a></code></pre></div>
 </section><section id="kleinschreibung-vereinheitlichen" class="slide level2">
 <h2>Kleinschreibung vereinheitlichen</h2>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb33-1" data-line-number="1">grundgesetz <span class="op">=</span> grundgesetz.lower()</a>
-<a class="sourceLine" id="cb33-2" data-line-number="2"><span class="bu">print</span>(grundgesetz[:<span class="dv">250</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" data-line-number="1">grundgesetz <span class="op">=</span> grundgesetz.lower()</a>
+<a class="sourceLine" id="cb34-2" data-line-number="2"><span class="bu">print</span>(grundgesetz[:<span class="dv">250</span>])</a></code></pre></div>
 </section><section id="zeichensetzung-entfernen" class="slide level2">
 <h2>Zeichensetzung entfernen</h2>
-<div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb34-1" data-line-number="1"><span class="im">import</span> string</a>
-<a class="sourceLine" id="cb34-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb34-3" data-line-number="3"><span class="kw">def</span> remove_punctuation(text):</a>
-<a class="sourceLine" id="cb34-4" data-line-number="4">    punctuation <span class="op">=</span> string.punctuation</a>
-<a class="sourceLine" id="cb34-5" data-line-number="5">    <span class="cf">for</span> marker <span class="kw">in</span> punctuation:</a>
-<a class="sourceLine" id="cb34-6" data-line-number="6">        text <span class="op">=</span> text.replace(marker, <span class="st">&quot;&quot;</span>)</a>
-<a class="sourceLine" id="cb34-7" data-line-number="7">    <span class="cf">return</span> text</a>
-<a class="sourceLine" id="cb34-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb34-9" data-line-number="9">grundgesetz <span class="op">=</span> remove_punctuation(grundgesetz)</a>
-<a class="sourceLine" id="cb34-10" data-line-number="10"><span class="bu">print</span>(grundgesetz[:<span class="dv">250</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb35-1" data-line-number="1"><span class="im">import</span> string</a>
+<a class="sourceLine" id="cb35-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb35-3" data-line-number="3"><span class="kw">def</span> remove_punctuation(text):</a>
+<a class="sourceLine" id="cb35-4" data-line-number="4">    punctuation <span class="op">=</span> string.punctuation</a>
+<a class="sourceLine" id="cb35-5" data-line-number="5">    <span class="cf">for</span> marker <span class="kw">in</span> punctuation:</a>
+<a class="sourceLine" id="cb35-6" data-line-number="6">        text <span class="op">=</span> text.replace(marker, <span class="st">&quot;&quot;</span>)</a>
+<a class="sourceLine" id="cb35-7" data-line-number="7">    <span class="cf">return</span> text</a>
+<a class="sourceLine" id="cb35-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb35-9" data-line-number="9">grundgesetz <span class="op">=</span> remove_punctuation(grundgesetz)</a>
+<a class="sourceLine" id="cb35-10" data-line-number="10"><span class="bu">print</span>(grundgesetz[:<span class="dv">250</span>])</a></code></pre></div>
 </section><section id="liste-erstellen" class="slide level2">
 <h2>Liste erstellen</h2>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb35-1" data-line-number="1">grundgesetz_words <span class="op">=</span> grundgesetz.split()</a></code></pre></div>
-<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" data-line-number="1"><span class="bu">print</span>(<span class="st">&quot;Anzahl aller Worte des Textes: &quot;</span>)</a>
-<a class="sourceLine" id="cb36-2" data-line-number="2"><span class="bu">print</span>(<span class="bu">len</span>(grundgesetz_words)))</a>
-<a class="sourceLine" id="cb36-3" data-line-number="3"><span class="bu">print</span>(<span class="st">&quot;=======&quot;</span>)</a>
-<a class="sourceLine" id="cb36-4" data-line-number="4"><span class="bu">print</span>(grundgesetz_words[:<span class="dv">25</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb36-1" data-line-number="1">grundgesetz_words <span class="op">=</span> grundgesetz.split()</a></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="bu">print</span>(<span class="st">&quot;Anzahl aller Worte des Textes: &quot;</span>)</a>
+<a class="sourceLine" id="cb37-2" data-line-number="2"><span class="bu">print</span>(<span class="bu">len</span>(grundgesetz_words))</a>
+<a class="sourceLine" id="cb37-3" data-line-number="3"><span class="bu">print</span>(<span class="st">&quot;=======&quot;</span>)</a>
+<a class="sourceLine" id="cb37-4" data-line-number="4"><span class="bu">print</span>(grundgesetz_words[:<span class="dv">25</span>])</a></code></pre></div>
 </section><section id="zählen-eines-bestimmten-worts" class="slide level2">
 <h2>Zählen eines bestimmten Worts</h2>
-<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb37-1" data-line-number="1"><span class="kw">def</span> count_item_in_text(item_to_count, list_to_search):</a>
-<a class="sourceLine" id="cb37-2" data-line-number="2">    number_of_hits <span class="op">=</span> <span class="dv">0</span></a>
-<a class="sourceLine" id="cb37-3" data-line-number="3">    <span class="cf">for</span> item <span class="kw">in</span> list_to_search:</a>
-<a class="sourceLine" id="cb37-4" data-line-number="4">        <span class="cf">if</span> item <span class="op">==</span> item_to_count:</a>
-<a class="sourceLine" id="cb37-5" data-line-number="5">            number_of_hits <span class="op">+=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb37-6" data-line-number="6">    <span class="cf">return</span> number_of_hits</a>
-<a class="sourceLine" id="cb37-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb37-8" data-line-number="8"><span class="bu">print</span>(count_item_in_text(<span class="st">&quot;freiheit&quot;</span>, grundgesetz_words))</a></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">def</span> count_item_in_text(item_to_count, list_to_search):</a>
+<a class="sourceLine" id="cb38-2" data-line-number="2">    number_of_hits <span class="op">=</span> <span class="dv">0</span></a>
+<a class="sourceLine" id="cb38-3" data-line-number="3">    <span class="cf">for</span> item <span class="kw">in</span> list_to_search:</a>
+<a class="sourceLine" id="cb38-4" data-line-number="4">        <span class="cf">if</span> item <span class="op">==</span> item_to_count:</a>
+<a class="sourceLine" id="cb38-5" data-line-number="5">            number_of_hits <span class="op">+=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb38-6" data-line-number="6">    <span class="cf">return</span> number_of_hits</a>
+<a class="sourceLine" id="cb38-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb38-8" data-line-number="8"><span class="bu">print</span>(count_item_in_text(<span class="st">&quot;freiheit&quot;</span>, grundgesetz_words))</a></code></pre></div>
 </section><section id="alle-wörter-zählen-mit-hilfe-eines-dictionarys" class="slide level2">
 <h2>Alle Wörter zählen mit Hilfe eines Dictionarys</h2>
-<div class="sourceCode" id="cb38"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb38-1" data-line-number="1"><span class="kw">def</span> counter_dict(list_to_search):</a>
-<a class="sourceLine" id="cb38-2" data-line-number="2">    counts <span class="op">=</span> {}</a>
-<a class="sourceLine" id="cb38-3" data-line-number="3">    <span class="cf">for</span> word <span class="kw">in</span> list_to_search:</a>
-<a class="sourceLine" id="cb38-4" data-line-number="4">        <span class="cf">if</span> word <span class="kw">in</span> counts:</a>
-<a class="sourceLine" id="cb38-5" data-line-number="5">            counts[word] <span class="op">=</span> counts[word] <span class="op">+</span> <span class="dv">1</span>  </a>
-<a class="sourceLine" id="cb38-6" data-line-number="6">        <span class="cf">else</span>:</a>
-<a class="sourceLine" id="cb38-7" data-line-number="7">            counts[word] <span class="op">=</span> <span class="dv">1</span></a>
-<a class="sourceLine" id="cb38-8" data-line-number="8">    <span class="cf">return</span> counts</a>
-<a class="sourceLine" id="cb38-9" data-line-number="9"></a>
-<a class="sourceLine" id="cb38-10" data-line-number="10"><span class="bu">print</span>(counter_dict(grundgesetz_words))</a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">def</span> counter_dict(list_to_search):</a>
+<a class="sourceLine" id="cb39-2" data-line-number="2">    counts <span class="op">=</span> {}</a>
+<a class="sourceLine" id="cb39-3" data-line-number="3">    <span class="cf">for</span> word <span class="kw">in</span> list_to_search:</a>
+<a class="sourceLine" id="cb39-4" data-line-number="4">        <span class="cf">if</span> word <span class="kw">in</span> counts:</a>
+<a class="sourceLine" id="cb39-5" data-line-number="5">            counts[word] <span class="op">=</span> counts[word] <span class="op">+</span> <span class="dv">1</span>  </a>
+<a class="sourceLine" id="cb39-6" data-line-number="6">        <span class="cf">else</span>:</a>
+<a class="sourceLine" id="cb39-7" data-line-number="7">            counts[word] <span class="op">=</span> <span class="dv">1</span></a>
+<a class="sourceLine" id="cb39-8" data-line-number="8">    <span class="cf">return</span> counts</a>
+<a class="sourceLine" id="cb39-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb39-10" data-line-number="10"><span class="bu">print</span>(counter_dict(grundgesetz_words))</a></code></pre></div>
 </section><section id="worthäufigkeiten-sortieren" class="slide level2">
 <h2>Worthäufigkeiten sortieren</h2>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb39-1" data-line-number="1"><span class="kw">def</span> freq_sort(list_to_search):</a>
-<a class="sourceLine" id="cb39-2" data-line-number="2">    counts <span class="op">=</span> counter_dict(list_to_search)</a>
-<a class="sourceLine" id="cb39-3" data-line-number="3">    counts <span class="op">=</span> [(counts[key], key) <span class="cf">for</span> key <span class="kw">in</span> counts]</a>
-<a class="sourceLine" id="cb39-4" data-line-number="4">    counts.sort()</a>
-<a class="sourceLine" id="cb39-5" data-line-number="5">    counts.reverse()</a>
-<a class="sourceLine" id="cb39-6" data-line-number="6">    <span class="cf">return</span> counts</a>
-<a class="sourceLine" id="cb39-7" data-line-number="7"></a>
-<a class="sourceLine" id="cb39-8" data-line-number="8"><span class="bu">print</span>(freq_sort(grundgesetz_words)[:<span class="dv">25</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="kw">def</span> freq_sort(list_to_search):</a>
+<a class="sourceLine" id="cb40-2" data-line-number="2">    counts <span class="op">=</span> counter_dict(list_to_search)</a>
+<a class="sourceLine" id="cb40-3" data-line-number="3">    counts <span class="op">=</span> [(counts[key], key) <span class="cf">for</span> key <span class="kw">in</span> counts]</a>
+<a class="sourceLine" id="cb40-4" data-line-number="4">    counts.sort()</a>
+<a class="sourceLine" id="cb40-5" data-line-number="5">    counts.reverse()</a>
+<a class="sourceLine" id="cb40-6" data-line-number="6">    <span class="cf">return</span> counts</a>
+<a class="sourceLine" id="cb40-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb40-8" data-line-number="8"><span class="bu">print</span>(freq_sort(grundgesetz_words)[:<span class="dv">25</span>])</a></code></pre></div>
 </section><section id="entfernen-von-stoppwörtern" class="slide level2">
 <h2>Entfernen von Stoppwörtern</h2>
-<div class="sourceCode" id="cb40"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb40-1" data-line-number="1"><span class="im">import</span> requests</a>
-<a class="sourceLine" id="cb40-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb40-3" data-line-number="3"><span class="kw">def</span> remove_stopwords(list_to_search):</a>
-<a class="sourceLine" id="cb40-4" data-line-number="4">    stopword_url <span class="op">=</span> <span class="st">&quot;http://members.unine.ch/jacques.savoy/clef/germanST.txt&quot;</span></a>
-<a class="sourceLine" id="cb40-5" data-line-number="5">    response <span class="op">=</span> requests.get(stopword_url)</a>
-<a class="sourceLine" id="cb40-6" data-line-number="6">    stopwords <span class="op">=</span> response.text</a>
-<a class="sourceLine" id="cb40-7" data-line-number="7">    stopwords <span class="op">=</span> stopwords.split()</a>
-<a class="sourceLine" id="cb40-8" data-line-number="8">    <span class="cf">return</span> [w <span class="cf">for</span> w <span class="kw">in</span> list_to_search <span class="cf">if</span> w <span class="kw">not</span> <span class="kw">in</span> stopwords]</a>
-<a class="sourceLine" id="cb40-9" data-line-number="9">  </a>
-<a class="sourceLine" id="cb40-10" data-line-number="10"><span class="bu">print</span>(remove_stopwords(grundgesetz_words)[:<span class="dv">25</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb41-1" data-line-number="1"><span class="im">import</span> requests</a>
+<a class="sourceLine" id="cb41-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb41-3" data-line-number="3"><span class="kw">def</span> remove_stopwords(list_to_search):</a>
+<a class="sourceLine" id="cb41-4" data-line-number="4">    stopword_url <span class="op">=</span> <span class="st">&quot;http://members.unine.ch/jacques.savoy/clef/germanST.txt&quot;</span></a>
+<a class="sourceLine" id="cb41-5" data-line-number="5">    response <span class="op">=</span> requests.get(stopword_url)</a>
+<a class="sourceLine" id="cb41-6" data-line-number="6">    stopwords <span class="op">=</span> response.text</a>
+<a class="sourceLine" id="cb41-7" data-line-number="7">    stopwords <span class="op">=</span> stopwords.split()</a>
+<a class="sourceLine" id="cb41-8" data-line-number="8">    <span class="cf">return</span> [w <span class="cf">for</span> w <span class="kw">in</span> list_to_search <span class="cf">if</span> w <span class="kw">not</span> <span class="kw">in</span> stopwords]</a>
+<a class="sourceLine" id="cb41-9" data-line-number="9">  </a>
+<a class="sourceLine" id="cb41-10" data-line-number="10"><span class="bu">print</span>(remove_stopwords(grundgesetz_words)[:<span class="dv">25</span>])</a></code></pre></div>
 </section><section id="funktionsaufrufe" class="slide level2">
 <h2>Funktionsaufrufe</h2>
-<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb41-1" data-line-number="1">grundgesetz <span class="op">=</span> grundgesetz.lower()</a>
-<a class="sourceLine" id="cb41-2" data-line-number="2">grundgesetz <span class="op">=</span> remove_punctuation(grundgesetz)</a>
-<a class="sourceLine" id="cb41-3" data-line-number="3">grundgesetz_words <span class="op">=</span> grundgesetz.split()</a>
-<a class="sourceLine" id="cb41-4" data-line-number="4">grundgesetz_words <span class="op">=</span> remove_stopwords(grundgesetz_words)</a>
-<a class="sourceLine" id="cb41-5" data-line-number="5"><span class="bu">print</span>(freq_count(grundgesetz_words)[:<span class="dv">25</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb42-1" data-line-number="1">grundgesetz <span class="op">=</span> grundgesetz.lower()</a>
+<a class="sourceLine" id="cb42-2" data-line-number="2">grundgesetz <span class="op">=</span> remove_punctuation(grundgesetz)</a>
+<a class="sourceLine" id="cb42-3" data-line-number="3">grundgesetz_words <span class="op">=</span> grundgesetz.split()</a>
+<a class="sourceLine" id="cb42-4" data-line-number="4">grundgesetz_words <span class="op">=</span> remove_stopwords(grundgesetz_words)</a>
+<a class="sourceLine" id="cb42-5" data-line-number="5"><span class="bu">print</span>(freq_count(grundgesetz_words)[:<span class="dv">25</span>])</a></code></pre></div>
 </section></section>
 <section><section id="block-7-nltk" class="title-slide slide level1"><h1>Block 7: NLTK</h1></section><section id="collections" class="slide level2">
 <h2>collections</h2>
-<div class="sourceCode" id="cb42"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb42-1" data-line-number="1"><span class="im">from</span> collections <span class="im">import</span> Counter</a>
-<a class="sourceLine" id="cb42-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb42-3" data-line-number="3">freq <span class="op">=</span> Counter(grundgesetz_words)</a></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="im">from</span> collections <span class="im">import</span> Counter</a>
+<a class="sourceLine" id="cb43-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb43-3" data-line-number="3">freq <span class="op">=</span> Counter(grundgesetz_words)</a></code></pre></div>
 </section><section id="most-common" class="slide level2">
 <h2>most common</h2>
-<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb43-1" data-line-number="1"><span class="bu">print</span>(freq.most_common(<span class="dv">25</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="bu">print</span>(freq.most_common(<span class="dv">25</span>))</a></code></pre></div>
 </section><section id="nltk" class="slide level2">
 <h2>NLTK</h2>
-<div class="sourceCode" id="cb44"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb44-1" data-line-number="1"><span class="im">import</span> nltk</a>
-<a class="sourceLine" id="cb44-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb44-3" data-line-number="3"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;grundgesetz.txt&#39;</span>, <span class="st">&#39;r&#39;</span> encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> infile:</a>
-<a class="sourceLine" id="cb44-4" data-line-number="4">    text_raw <span class="op">=</span> infile.read()</a>
-<a class="sourceLine" id="cb44-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb44-6" data-line-number="6">text <span class="op">=</span> text_raw.lower()</a>
-<a class="sourceLine" id="cb44-7" data-line-number="7">text <span class="op">=</span> text.split()</a>
-<a class="sourceLine" id="cb44-8" data-line-number="8">text <span class="op">=</span> nltk.Text(text)  </a></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb45-1" data-line-number="1"><span class="im">import</span> nltk</a>
+<a class="sourceLine" id="cb45-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb45-3" data-line-number="3"><span class="cf">with</span> <span class="bu">open</span>(<span class="st">&#39;grundgesetz.txt&#39;</span>, <span class="st">&#39;r&#39;</span>, encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> infile:</a>
+<a class="sourceLine" id="cb45-4" data-line-number="4">    text_raw <span class="op">=</span> infile.read()</a>
+<a class="sourceLine" id="cb45-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb45-6" data-line-number="6">text <span class="op">=</span> text_raw.lower()</a>
+<a class="sourceLine" id="cb45-7" data-line-number="7">text <span class="op">=</span> text.split()</a>
+<a class="sourceLine" id="cb45-8" data-line-number="8">text <span class="op">=</span> nltk.Text(text)  </a></code></pre></div>
 </section><section id="concordance" class="slide level2">
 <h2>concordance</h2>
-<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb45-1" data-line-number="1">text.concordance(<span class="st">&quot;freiheit&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb46-1" data-line-number="1">text.concordance(<span class="st">&quot;freiheit&quot;</span>)</a></code></pre></div>
 </section><section id="similar" class="slide level2">
 <h2>similar</h2>
-<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb46-1" data-line-number="1">text.similar(<span class="st">&quot;freiheit&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb47-1" data-line-number="1">text.similar(<span class="st">&quot;freiheit&quot;</span>)</a></code></pre></div>
 </section><section id="dispersion-plot" class="slide level2">
 <h2>dispersion plot</h2>
-<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb47-1" data-line-number="1">text.dispersion_plot([<span class="st">&quot;artikel&quot;</span>, <span class="st">&quot;gesetz&quot;</span>, <span class="st">&quot;freiheit&quot;</span>])</a></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb48-1" data-line-number="1">text.dispersion_plot([<span class="st">&quot;artikel&quot;</span>, <span class="st">&quot;gesetz&quot;</span>, <span class="st">&quot;freiheit&quot;</span>])</a></code></pre></div>
 </section></section>
 <section><section id="block-8-web-scraping" class="title-slide slide level1"><h1>Block 8: Web Scraping</h1></section><section id="ziel-des-web-scraping" class="slide level2">
 <h2>Ziel des Web Scraping</h2>
@@ -730,58 +752,58 @@ LOOP OVER TEXT
 </ul>
 </section><section id="import-der-module" class="slide level2">
 <h2>Import der Module</h2>
-<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb48-1" data-line-number="1"><span class="im">import</span> request</a>
-<a class="sourceLine" id="cb48-2" data-line-number="2"><span class="im">import</span> time</a>
-<a class="sourceLine" id="cb48-3" data-line-number="3"><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</a></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb49-1" data-line-number="1"><span class="im">import</span> requests</a>
+<a class="sourceLine" id="cb49-2" data-line-number="2"><span class="im">import</span> time</a>
+<a class="sourceLine" id="cb49-3" data-line-number="3"><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</a></code></pre></div>
 </section><section id="url-root-und-variablen" class="slide level2">
 <h2>URL-Root und Variablen</h2>
-<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb49-1" data-line-number="1">url_root <span class="op">=</span> <span class="st">&#39;https://digigw.hypotheses.org/&#39;</span></a>
-<a class="sourceLine" id="cb49-2" data-line-number="2">blog_ID_list <span class="op">=</span> []</a>
-<a class="sourceLine" id="cb49-3" data-line-number="3">article_length_list <span class="op">=</span> []</a></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb50-1" data-line-number="1">url_root <span class="op">=</span> <span class="st">&#39;https://digigw.hypotheses.org/&#39;</span></a>
+<a class="sourceLine" id="cb50-2" data-line-number="2">blog_ID_list <span class="op">=</span> []</a>
+<a class="sourceLine" id="cb50-3" data-line-number="3">article_length_list <span class="op">=</span> []</a></code></pre></div>
 </section><section id="schleife-ids" class="slide level2">
 <h2>Schleife IDs</h2>
-<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb50-1" data-line-number="1"><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">19</span>):</a>
-<a class="sourceLine" id="cb50-2" data-line-number="2">    url <span class="op">=</span> url_root <span class="op">+</span> <span class="st">&#39;page/&#39;</span> <span class="op">+</span> <span class="bu">str</span>(x)</a>
-<a class="sourceLine" id="cb50-3" data-line-number="3">    response <span class="op">=</span> requests.get(url)</a>
-<a class="sourceLine" id="cb50-4" data-line-number="4">    response <span class="op">=</span> response.text</a>
-<a class="sourceLine" id="cb50-5" data-line-number="5">    soup <span class="op">=</span> BeautifulSoup(response, <span class="st">&#39;html.parser&#39;</span>)</a>
-<a class="sourceLine" id="cb50-6" data-line-number="6">    blog_IDs <span class="op">=</span> soup.find_all(<span class="st">&#39;h2&#39;</span>,</a>
-<a class="sourceLine" id="cb50-7" data-line-number="7">                             {<span class="st">&#39;class&#39;</span>: <span class="st">&#39;entry-title&#39;</span>})    </a>
-<a class="sourceLine" id="cb50-8" data-line-number="8">    <span class="cf">for</span> element <span class="kw">in</span> blog_IDs:</a>
-<a class="sourceLine" id="cb50-9" data-line-number="9">        blog_ID <span class="op">=</span> element.find(<span class="st">&#39;a&#39;</span>)[<span class="st">&#39;href&#39;</span>]</a>
-<a class="sourceLine" id="cb50-10" data-line-number="10">        blog_ID <span class="op">=</span> blog_ID.split(<span class="st">&#39;/&#39;</span>)</a>
-<a class="sourceLine" id="cb50-11" data-line-number="11">        blog_ID <span class="op">=</span> blog_ID[<span class="dv">3</span>]</a>
-<a class="sourceLine" id="cb50-12" data-line-number="12">        blog_ID_list.append(blog_ID)    </a>
-<a class="sourceLine" id="cb50-13" data-line-number="13">    time.sleep(<span class="dv">5</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">19</span>):</a>
+<a class="sourceLine" id="cb51-2" data-line-number="2">    url <span class="op">=</span> url_root <span class="op">+</span> <span class="st">&#39;page/&#39;</span> <span class="op">+</span> <span class="bu">str</span>(x)</a>
+<a class="sourceLine" id="cb51-3" data-line-number="3">    response <span class="op">=</span> requests.get(url)</a>
+<a class="sourceLine" id="cb51-4" data-line-number="4">    response <span class="op">=</span> response.text</a>
+<a class="sourceLine" id="cb51-5" data-line-number="5">    soup <span class="op">=</span> BeautifulSoup(response, <span class="st">&#39;html.parser&#39;</span>)</a>
+<a class="sourceLine" id="cb51-6" data-line-number="6">    blog_IDs <span class="op">=</span> soup.find_all(<span class="st">&#39;h2&#39;</span>,</a>
+<a class="sourceLine" id="cb51-7" data-line-number="7">                             {<span class="st">&#39;class&#39;</span>: <span class="st">&#39;entry-title&#39;</span>})    </a>
+<a class="sourceLine" id="cb51-8" data-line-number="8">    <span class="cf">for</span> element <span class="kw">in</span> blog_IDs:</a>
+<a class="sourceLine" id="cb51-9" data-line-number="9">        blog_ID <span class="op">=</span> element.find(<span class="st">&#39;a&#39;</span>)[<span class="st">&#39;href&#39;</span>]</a>
+<a class="sourceLine" id="cb51-10" data-line-number="10">        blog_ID <span class="op">=</span> blog_ID.split(<span class="st">&#39;/&#39;</span>)</a>
+<a class="sourceLine" id="cb51-11" data-line-number="11">        blog_ID <span class="op">=</span> blog_ID[<span class="dv">3</span>]</a>
+<a class="sourceLine" id="cb51-12" data-line-number="12">        blog_ID_list.append(blog_ID)    </a>
+<a class="sourceLine" id="cb51-13" data-line-number="13">    time.sleep(<span class="dv">5</span>)</a></code></pre></div>
 </section><section id="schleife-text" class="slide level2">
 <h2>Schleife Text</h2>
-<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb51-1" data-line-number="1"><span class="cf">for</span> x <span class="kw">in</span> blog_ID_list:    </a>
-<a class="sourceLine" id="cb51-2" data-line-number="2">    <span class="cf">try</span>:</a>
-<a class="sourceLine" id="cb51-3" data-line-number="3">        response <span class="op">=</span> requests.get(url_root <span class="op">+</span> <span class="bu">str</span>(x))</a>
-<a class="sourceLine" id="cb51-4" data-line-number="4">        response <span class="op">=</span> response.text </a>
-<a class="sourceLine" id="cb51-5" data-line-number="5">        soup <span class="op">=</span> BeautifulSoup(response, <span class="st">&quot;html.parser&quot;</span>)</a>
-<a class="sourceLine" id="cb51-6" data-line-number="6">        article_text <span class="op">=</span> soup.find(</a>
-<a class="sourceLine" id="cb51-7" data-line-number="7">                        attrs<span class="op">=</span>{<span class="st">&quot;class&quot;</span>: <span class="st">&quot;entry-content&quot;</span>}</a>
-<a class="sourceLine" id="cb51-8" data-line-number="8">                        ).text.strip()</a>
-<a class="sourceLine" id="cb51-9" data-line-number="9">        article_length_list.append(<span class="bu">len</span>(article_text))</a>
-<a class="sourceLine" id="cb51-10" data-line-number="10">        <span class="cf">with</span> <span class="bu">open</span>(<span class="vs">r&#39;./data-blog-posts/digigw-blog_&#39;</span> </a>
-<a class="sourceLine" id="cb51-11" data-line-number="11">                    <span class="op">+</span> <span class="bu">str</span>(x) <span class="op">+</span> <span class="st">&#39;.txt&#39;</span>, </a>
-<a class="sourceLine" id="cb51-12" data-line-number="12">                    <span class="st">&#39;w&#39;</span>, encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> infile:</a>
-<a class="sourceLine" id="cb51-13" data-line-number="13">            infile.write(article_text)   </a>
-<a class="sourceLine" id="cb51-14" data-line-number="14">        time.sleep(<span class="dv">8</span>)</a>
-<a class="sourceLine" id="cb51-15" data-line-number="15">    <span class="cf">except</span>:</a>
-<a class="sourceLine" id="cb51-16" data-line-number="16">        <span class="cf">continue</span></a></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="cf">for</span> x <span class="kw">in</span> blog_ID_list:    </a>
+<a class="sourceLine" id="cb52-2" data-line-number="2">    <span class="cf">try</span>:</a>
+<a class="sourceLine" id="cb52-3" data-line-number="3">        response <span class="op">=</span> requests.get(url_root <span class="op">+</span> <span class="bu">str</span>(x))</a>
+<a class="sourceLine" id="cb52-4" data-line-number="4">        response <span class="op">=</span> response.text </a>
+<a class="sourceLine" id="cb52-5" data-line-number="5">        soup <span class="op">=</span> BeautifulSoup(response, <span class="st">&quot;html.parser&quot;</span>)</a>
+<a class="sourceLine" id="cb52-6" data-line-number="6">        article_text <span class="op">=</span> soup.find(</a>
+<a class="sourceLine" id="cb52-7" data-line-number="7">                        attrs<span class="op">=</span>{<span class="st">&quot;class&quot;</span>: <span class="st">&quot;entry-content&quot;</span>}</a>
+<a class="sourceLine" id="cb52-8" data-line-number="8">                        ).text.strip()</a>
+<a class="sourceLine" id="cb52-9" data-line-number="9">        article_length_list.append(<span class="bu">len</span>(article_text))</a>
+<a class="sourceLine" id="cb52-10" data-line-number="10">        <span class="cf">with</span> <span class="bu">open</span>(<span class="vs">r&#39;./data-blog-posts/digigw-blog_&#39;</span> </a>
+<a class="sourceLine" id="cb52-11" data-line-number="11">                    <span class="op">+</span> <span class="bu">str</span>(x) <span class="op">+</span> <span class="st">&#39;.txt&#39;</span>, </a>
+<a class="sourceLine" id="cb52-12" data-line-number="12">                    <span class="st">&#39;w&#39;</span>, encoding<span class="op">=</span><span class="st">&#39;utf-8&#39;</span>) <span class="im">as</span> infile:</a>
+<a class="sourceLine" id="cb52-13" data-line-number="13">            infile.write(article_text)   </a>
+<a class="sourceLine" id="cb52-14" data-line-number="14">        time.sleep(<span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb52-15" data-line-number="15">    <span class="cf">except</span>:</a>
+<a class="sourceLine" id="cb52-16" data-line-number="16">        <span class="cf">continue</span></a></code></pre></div>
 </section><section id="ausgabe-ergebnisse" class="slide level2">
 <h2>Ausgabe Ergebnisse</h2>
-<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb52-1" data-line-number="1"><span class="bu">print</span>(blog_ID_list)</a>
-<a class="sourceLine" id="cb52-2" data-line-number="2"><span class="bu">print</span>(<span class="st">&#39;Gesamtanzahl der Blogbeiträge: &#39;</span>) </a>
-<a class="sourceLine" id="cb52-3" data-line-number="3"><span class="bu">print</span>(<span class="bu">str</span>(<span class="bu">len</span>(blog_ID_list)))</a>
-<a class="sourceLine" id="cb52-4" data-line-number="4"><span class="bu">print</span>(<span class="st">&#39;Anzahl der Zeichen des längsten Blogbeitrags: &#39;</span>)</a>
-<a class="sourceLine" id="cb52-5" data-line-number="5"><span class="bu">print</span>(<span class="bu">str</span>(<span class="bu">max</span>(article_length_list)))</a>
-<a class="sourceLine" id="cb52-6" data-line-number="6"><span class="bu">print</span>(<span class="st">&#39;Anzahl der Zeichen des kürzsten Blogbeitrags: &#39;</span>)</a>
-<a class="sourceLine" id="cb52-7" data-line-number="7"><span class="bu">print</span>(<span class="bu">str</span>(<span class="bu">min</span>(article_length_list)))</a>
-<a class="sourceLine" id="cb52-8" data-line-number="8"><span class="bu">print</span>(<span class="st">&#39;Anzahl der Zeichen der Blogbeiträge im Durchschnit: &#39;</span>)</a>
-<a class="sourceLine" id="cb52-9" data-line-number="9"><span class="bu">print</span>(<span class="bu">str</span>(<span class="bu">sum</span>(article_length_list) <span class="op">/</span> <span class="bu">len</span>(article_length)))</a></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><a class="sourceLine" id="cb53-1" data-line-number="1"><span class="bu">print</span>(blog_ID_list)</a>
+<a class="sourceLine" id="cb53-2" data-line-number="2"><span class="bu">print</span>(<span class="st">&#39;Gesamtanzahl der Blogbeiträge: &#39;</span>) </a>
+<a class="sourceLine" id="cb53-3" data-line-number="3"><span class="bu">print</span>(<span class="bu">str</span>(<span class="bu">len</span>(blog_ID_list)))</a>
+<a class="sourceLine" id="cb53-4" data-line-number="4"><span class="bu">print</span>(<span class="st">&#39;Anzahl der Zeichen des längsten Blogbeitrags: &#39;</span>)</a>
+<a class="sourceLine" id="cb53-5" data-line-number="5"><span class="bu">print</span>(<span class="bu">str</span>(<span class="bu">max</span>(article_length_list)))</a>
+<a class="sourceLine" id="cb53-6" data-line-number="6"><span class="bu">print</span>(<span class="st">&#39;Anzahl der Zeichen des kürzsten Blogbeitrags: &#39;</span>)</a>
+<a class="sourceLine" id="cb53-7" data-line-number="7"><span class="bu">print</span>(<span class="bu">str</span>(<span class="bu">min</span>(article_length_list)))</a>
+<a class="sourceLine" id="cb53-8" data-line-number="8"><span class="bu">print</span>(<span class="st">&#39;Anzahl der Zeichen der Blogbeiträge im Durchschnit: &#39;</span>)</a>
+<a class="sourceLine" id="cb53-9" data-line-number="9"><span class="bu">print</span>(<span class="bu">str</span>(<span class="bu">sum</span>(article_length_list) <span class="op">/</span> <span class="bu">len</span>(article_length_list)))</a></code></pre></div>
 </section></section>
 <section><section id="block-9-hilfe-zur-selbsthilfe" class="title-slide slide level1"><h1>Block 9: Hilfe zur Selbsthilfe</h1></section><section id="tutorials" class="slide level2">
 <h2>Tutorials</h2>

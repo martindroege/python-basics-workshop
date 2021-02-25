@@ -61,6 +61,12 @@ len(obj, /)
     Return the number of items in a container.
 ```
 
+## weitere Hilfen
+
+* var. + [TAB] erzeugt Vorschau
+* var.lower? erklärt Methoden
+* [TAB] bietet Autovervollständigung
+
 ## Kontrollstrukturen
 
 ## For-Schleife

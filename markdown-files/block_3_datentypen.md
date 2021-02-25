@@ -43,6 +43,12 @@ event.lower()
 "Digital History Tagung".upper()
 ```
 
+## Built-in Functions
+
+* [Übersicht und
+  Dokumentation](https://docs.python.org/3/library/functions.html)
+* Grundsätzlich: Dokumentationen helfen oft weiter!
+
 ## Listen / Lists
 
 ```Python
