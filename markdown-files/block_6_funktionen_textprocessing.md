@@ -110,11 +110,23 @@ def remove_stopwords(list_to_search):
 print(remove_stopwords(grundgesetz_words)[:25])
 ```
 
+## Entfernen von Zahlen mit regulärem Ausdruck
+
+```python
+import re
+
+RE_INT = re.compile(r'\d+')
+
+def remove_digit(text):
+    return re.sub(RE_INT, '', text)
+```
+
 ## Funktionsaufrufe
 
 ```python
 grundgesetz = grundgesetz.lower()
 grundgesetz = remove_punctuation(grundgesetz)
+grundgesetz = remove_digit(grundgesetz)
 grundgesetz_words = grundgesetz.split()
 grundgesetz_words = remove_stopwords(grundgesetz_words)
 print(freq_count(grundgesetz_words)[:25])

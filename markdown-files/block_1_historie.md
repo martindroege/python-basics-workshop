@@ -47,11 +47,26 @@
 * System-Administration
 * Rapid Prototyping
 
-## Hilfe zur Selbsthilfe
+## Anwendungsbeispiele für HistorikerInnen
 
-* [Python Tutorial](https://docs.python.org/3/tutorial/)
-* [learnpython.org](https://www.learnpython.org/)
-* [Python Dokumentation](https://www.python.org/doc/)
-* [Python Community](https://www.python.org/community/)
-* [Python Forum](https://www.python-forum.de/)
-* [Stack Overflow](https://stackoverflow.com/)
+## Twitter Mining
+
+![#Wutbürger Co-Hahstags](images/co-hashtag-wutbuerger.PNG)
+
+## Metadaten-Abfrage
+
+![Metadatensuche mit Polymatheia](images/metadaten-abfrage.PNG)
+
+## Topic Modeling
+
+<img src='images/topic-model-amtspresse.PNG' alt='Drawing' width='700' heigth='700'>
+
+Topic Modeling zur Preußischen Amtspresse
+<!-- ![Topic Modeling zur Preußischen Amtspresse](images/topic-model-amtspresse.PNG) -->
+
+## Netzwerkanalyse
+
+<img src='images/nba-bubble-netzwerk.PNG' alt='Drawing' width='500' heigth='500'>
+
+Netzwerk NBA-Bubble
+<!-- ![Netzwerkanalyse NBA-Bubble](images/nba-bubble-netzwerk.PNG) -->

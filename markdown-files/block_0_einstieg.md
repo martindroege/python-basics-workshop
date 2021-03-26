@@ -1,7 +1,7 @@
 ---
 title: Python Basics
 author: Martin Dröge
-date: 26. Februar 2021
+date: 29. März 2021
 ---
 
 # Einstieg
